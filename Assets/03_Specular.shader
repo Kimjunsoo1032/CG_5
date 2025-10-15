@@ -1,9 +1,9 @@
-Shader "Unlit/02_Lambert"
+﻿Shader "Unlit/03_Specular"
 {
-    // Properties
-    // {
-    //     _MainTex ("Texture", 2D) = "white" {}
-    // }
+    Properties
+    {
+        // _MainTex ("Texture", 2D) = "white" {}
+    }
     SubShader
     {
         // Tags { "RenderType"="Opaque" }
@@ -15,24 +15,21 @@ Shader "Unlit/02_Lambert"
             #pragma vertex vert
             #pragma fragment frag
             // make fog work
-            // #pragma multi_compile_fog
+            #pragma multi_compile_fog
 
             #include "UnityCG.cginc"
             #include "Lighting.cginc"
-
             struct appdata
             {
                 float4 vertex : POSITION;
                 float3 normal : NORMAL;
-                // float2 uv : TEXCOORD0;
             };
 
             struct v2f
             {
-                // float2 uv : TEXCOORD0;
-                // UNITY_FOG_COORDS(1)
                 float4 vertex : SV_POSITION;
-                float3 normal : NORMAL;
+                float3 worldPosition : TEXCOORD1;
+                float3 worldNormal : NORMAL;
             };
 
             // sampler2D _MainTex;
@@ -42,8 +39,8 @@ Shader "Unlit/02_Lambert"
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                o.normal = UnityObjectToWorldNormal(v.normal);
-               
+                o.worldPosition = mul(unity_ObjectToWorld,v.vertex);
+                o.worldNormal   = UnityObjectToWorldNormal(v.normal);
                 // o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 // UNITY_TRANSFER_FOG(o,o.vertex);
                 return o;
@@ -51,15 +48,12 @@ Shader "Unlit/02_Lambert"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                float intensity = saturate(dot(normalize(i.normal), _WorldSpaceLightPos0));
-                fixed4 color = fixed4(0,1,0,1);
-                fixed4 diffuse = color * intensity * _LightColor0;
-                return diffuse;
-                // // sample the texture
-                // fixed4 col = tex2D(_MainTex, i.uv);
-                // // apply fog
-                // UNITY_APPLY_FOG(i.fogCoord, col);
-                // return col;
+               float3 eyeDir = normalize(_WorldSpaceCameraPos.xyz - i.worldPosition);
+               float3 lightDir = normalize(_WorldSpaceLightPos0);
+               i.worldNormal = normalize(i.worldNormal);  
+               float3 reflectDir = -lightDir + 2 * i.worldNormal * dot(i.worldNormal, lightDir);
+               fixed4 specular = pow(saturate(dot(reflectDir,eyeDir)),20)*_LightColor0;
+               return specular;
             }
             ENDCG
         }
