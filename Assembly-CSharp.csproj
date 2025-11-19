@@ -70,7 +70,9 @@
     <None Include="Assets\03_Specular.shader" />
     <None Include="Assets\Test.shader" />
     <None Include="Assets\01_Simple.shader" />
+    <None Include="Assets\04_02_discard2.shader" />
     <None Include="Assets\Texture.shader" />
+    <None Include="Assets\04_02_discard.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
