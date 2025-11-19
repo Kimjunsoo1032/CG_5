@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Unlit_04_Phong
-  m_Shader: {fileID: 4800000, guid: 4654d652615835d4f932c81cb5b97384, type: 3}
+  m_Name: Unlit_Texture
+  m_Shader: {fileID: 4800000, guid: 9dc4bc44abf87f0419f9894983f9fee0, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -24,12 +24,12 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 2800000, guid: c334851ae4231764eaa7a8e56ae0ab9c, type: 3}
+        m_Scale: {x: 3, y: 5}
+        m_Offset: {x: 0.8, y: 0.2}
     m_Ints: []
     m_Floats: []
     m_Colors:
-    - _Color: {r: 1, g: 0.0019506137, b: 0, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
