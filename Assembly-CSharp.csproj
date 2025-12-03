@@ -66,9 +66,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\04_01_Alpha.shader" />
+    <None Include="Assets\06_Sten.shader" />
     <None Include="Assets\04_03.shader" />
     <None Include="Assets\04_Phong.shader" />
     <None Include="Assets\04_04.shader" />
+    <None Include="Assets\06_Sten2.shader" />
     <None Include="Assets\05_Texture.shader" />
     <None Include="Assets\02_Lambert.shader" />
     <None Include="Assets\03_Specular.shader" />
