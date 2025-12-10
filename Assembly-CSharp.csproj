@@ -66,19 +66,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\04_01_Alpha.shader" />
+    <None Include="Assets\07_Noise6.shader" />
     <None Include="Assets\06_Sten.shader" />
     <None Include="Assets\04_03.shader" />
+    <None Include="Assets\07_Noise5.shader" />
+    <None Include="Assets\07_Noise4.shader" />
     <None Include="Assets\04_Phong.shader" />
+    <None Include="Assets\07_Noise3.shader" />
     <None Include="Assets\04_04.shader" />
     <None Include="Assets\06_Sten2.shader" />
     <None Include="Assets\05_Texture.shader" />
     <None Include="Assets\02_Lambert.shader" />
     <None Include="Assets\03_Specular.shader" />
+    <None Include="Assets\07_Noise.shader" />
     <None Include="Assets\Test.shader" />
     <None Include="Assets\01_Simple.shader" />
     <None Include="Assets\04_02_discard2.shader" />
     <None Include="Assets\Texture.shader" />
     <None Include="Assets\05_Text.shader" />
+    <None Include="Assets\07_Noise2.shader" />
     <None Include="Assets\04_02_discard.shader" />
   </ItemGroup>
   <ItemGroup>
