@@ -83,6 +83,7 @@
     <None Include="Assets\01_Simple.shader" />
     <None Include="Assets\04_02_discard2.shader" />
     <None Include="Assets\Texture.shader" />
+    <None Include="Assets\08_Normal.shader" />
     <None Include="Assets\05_Text.shader" />
     <None Include="Assets\07_Noise2.shader" />
     <None Include="Assets\04_02_discard.shader" />
