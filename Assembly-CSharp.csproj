@@ -78,6 +78,7 @@
     <None Include="Assets\05_Texture.shader" />
     <None Include="Assets\02_Lambert.shader" />
     <None Include="Assets\03_Specular.shader" />
+    <None Include="Assets\09_Shader.shader" />
     <None Include="Assets\07_Noise.shader" />
     <None Include="Assets\Test.shader" />
     <None Include="Assets\01_Simple.shader" />
